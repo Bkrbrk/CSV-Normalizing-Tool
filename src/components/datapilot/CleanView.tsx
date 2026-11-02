@@ -108,13 +108,13 @@ export function CleanView({
       <h2 className="mb-3 mt-8 text-base font-semibold">2. Run an action</h2>
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         <ActionCard icon={<Scissors />} title="Trim whitespace" description="Remove leading and trailing spaces, tabs and line breaks from values in the selected columns.">
-          <Button className="w-full" disabled={none} onClick={() => onAction({ kind: "trim" })}>Trim · {label}</Button>
+          <Button className="h-auto min-h-9 w-full whitespace-normal py-2" disabled={none} onClick={() => onAction({ kind: "trim" })}>Trim · {label}</Button>
         </ActionCard>
         <ActionCard icon={<Copy />} title="Remove duplicates" description="Delete rows whose selected-column values exactly match an earlier row. Select all columns for whole-row duplicates. The first occurrence is kept.">
-          <Button className="w-full" disabled={none} onClick={() => onAction({ kind: "dedupe" })}>Remove duplicates · {label}</Button>
+          <Button className="h-auto min-h-9 w-full whitespace-normal py-2" disabled={none} onClick={() => onAction({ kind: "dedupe" })}>Remove duplicates · {label}</Button>
         </ActionCard>
         <ActionCard icon={<Eraser />} title="Drop missing rows" description="Delete every row where any selected column is blank or whitespace-only.">
-          <Button className="w-full" disabled={none} onClick={() => onAction({ kind: "drop" })}>Drop rows · {label}</Button>
+          <Button className="h-auto min-h-9 w-full whitespace-normal py-2" disabled={none} onClick={() => onAction({ kind: "drop" })}>Drop rows · {label}</Button>
         </ActionCard>
         <ActionCard icon={<PaintBucket />} title="Fill missing" description="Replace blank cells in the selected columns.">
           <fieldset className="space-y-2 text-sm">
@@ -144,7 +144,7 @@ export function CleanView({
             </p>
           )}
           <Button
-            className="mt-3 w-full"
+            className="mt-3 h-auto min-h-9 w-full whitespace-normal py-2"
             disabled={fillBlocked}
             onClick={() => onAction({ kind: "fill", strategy: fillMode === "custom" ? { kind: "custom", value: fillValue } : { kind: fillMode } })}
           >

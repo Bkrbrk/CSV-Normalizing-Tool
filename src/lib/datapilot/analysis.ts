@@ -212,6 +212,17 @@ export function histogram(
     if (n > max) max = n;
   }
   if (min === max) return [{ label: formatNumber(min), start: min, end: max, count: nums.length }];
+  // Small integer ranges get one bar per integer value (e.g. quantities 0–6).
+  if (nums.every(Number.isInteger) && max - min + 1 <= maxBins) {
+    const out = Array.from({ length: max - min + 1 }, (_, i) => ({
+      label: formatNumber(min + i),
+      start: min + i,
+      end: min + i,
+      count: 0,
+    }));
+    for (const n of nums) out[n - min]!.count++;
+    return out;
+  }
   const bins = Math.min(maxBins, Math.max(1, Math.ceil(Math.log2(nums.length) + 1)));
   const width = (max - min) / bins;
   const out = Array.from({ length: bins }, (_, i) => ({

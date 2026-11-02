@@ -116,6 +116,7 @@ describe("type inference and profiling", () => {
     const bins = histogram(nums);
     expect(bins.reduce((a, b) => a + b.count, 0)).toBe(100);
     expect(histogram([5, 5, 5])).toHaveLength(1);
+    expect(histogram([0, 1, 1, 6]).map((b) => b.count)).toEqual([1, 2, 0, 0, 0, 0, 1]);
   });
 
   it("groups the long tail of categories into Other", () => {
