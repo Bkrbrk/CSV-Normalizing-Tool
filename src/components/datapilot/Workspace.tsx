@@ -279,7 +279,7 @@ export function Workspace() {
       </div>
 
       <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
-        <SheetContent side="left" className="w-72 border-sidebar-border bg-sidebar p-0">
+        <SheetContent side="left" className="w-72 border-sidebar-border bg-sidebar p-0 text-sidebar-foreground">
           <SheetTitle className="sr-only">Navigation</SheetTitle>
           <SheetDescription className="sr-only">Move between DataPilot sections</SheetDescription>
           <SidebarContent view={view} go={go} ws={ws} onDownloadDemo={downloadDemo} />

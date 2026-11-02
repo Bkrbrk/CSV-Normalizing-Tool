@@ -28,7 +28,7 @@ export function WelcomeView({
         Clean and understand your CSV in minutes.
       </h1>
       <p className="mt-3 max-w-2xl text-muted-foreground">
-        A focused workspace for tidying spreadsheets exports. Start with the built-in demo to see how it works, or
+        A focused workspace for tidying spreadsheet exports. Start with the built-in demo to see how it works, or
         open your own file.
       </p>
 
